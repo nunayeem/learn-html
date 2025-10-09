@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Audio with HTML</title>
+</head>
+<body>
+    <audio controls autoplay muted>
+        <source src="audio/corporate-inspiring-motivational-healthcare-410903.mp3" type="audio/mpeg"/>
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Video Tag</h2>
+
+    <video id="video" controls width="440" height="360">
+        <source  src="video/mov_bbb.mp4" type="video/mp4"/>
+    </video>
+
+    <div class="video_controller">
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="makeSmall()">Small</button>
+        <button onclick="makeBig()">Big</button>
+        <button onclick="makeNormal()">Normal</button>
+    </div>
+
+    <h2>YouTube Video</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CD9uWUtjm4g?si=epmftxSwcCGB6eyb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <style>
+        .video_controller{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let video = document.getElementById('video');
+        
+        function playPause(){
+            if(video.paused){
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function makeSmall(){
+            video.width = 220;
+        }
+
+        function makeBig(){
+            video.width = 500;
+        }
+
+        function makeNormal(){
+            video.width = 440;
+        }
+    </script>
+</body>
+</html>
